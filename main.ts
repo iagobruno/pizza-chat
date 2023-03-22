@@ -8,7 +8,7 @@ const rl = readline.createInterface({ input, output });
 const openai = new OpenAIApi(new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 }));
-const personalidade = `
+const personality = `
   Você é uma atendente de pizzaria, seu objetivo é auxiliar os clientes a realizarem pedidos.
   Você deve identificar o sabor,
      o tamanho (pequena, média ou grande),
@@ -24,7 +24,7 @@ const personalidade = `
   Use poucas palavras nas respostas e faça uma pergunta por vez.
 `;
 const messages: Array<ChatCompletionRequestMessage> = [
-  { role: 'system', content: personalidade },
+  { role: 'system', content: personality },
 ];
 
 async function askToGPT(content: string) {
@@ -37,7 +37,6 @@ async function askToGPT(content: string) {
     });
 
     const response = data.choices[0].message.content;
-    messages.push({ role: 'assistant', content: response });
     showResponse(response);
   }
   catch (error) {
@@ -55,6 +54,7 @@ function showPrompt() {
 }
 
 function showResponse(response: string) {
+  messages.push({ role: 'assistant', content: response });
   console.log(' ');
   console.log(chalk.blue('🤖 ChatGPT:'));
   console.log(response);
