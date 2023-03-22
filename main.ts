@@ -1,4 +1,5 @@
 import { OpenAIApi, Configuration } from 'openai';
+import type { ChatCompletionRequestMessage } from 'openai';
 import chalk from 'chalk';
 import { stdin as input, stdout as output } from 'node:process';
 import * as readline from 'node:readline/promises';
@@ -22,7 +23,7 @@ const personalidade = `
   Se o cliente escolher pagar em dinheiro, pergunte se precisa de troco.
   Use poucas palavras nas respostas e faça uma pergunta por vez.
 `;
-const messages = [
+const messages: Array<ChatCompletionRequestMessage> = [
   { role: 'system', content: personalidade },
 ];
 

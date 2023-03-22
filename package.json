@@ -6,6 +6,7 @@
     "start": "tsx -r dotenv/config main.ts"
   },
   "dependencies": {
+    "@types/node": "^18.15.5",
     "chalk": "^5.2.0",
     "dotenv": "^16.0.3",
     "openai": "^3.2.1",
