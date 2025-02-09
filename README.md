@@ -1,14 +1,14 @@
-# brincando-com-chatgpt
+# pizza-chat
 
-Um chatbot que automatiza o atendimento de uma pizzaria usando a API do ChatGPT.
+Um chatbot que automatiza o atendimento de uma pizzaria usando a API da ChatGPT.
 
 ![screenshot](screenshot.png)
 
 ## Como começar
 
 ```
-git clone https://github.com/iagobruno/brincando-com-chatgpt.git
-cd brincando-com-chatgpt
+git clone https://github.com/iagobruno/pizza-chat.git
+cd pizza-chat
 yarn install
 cp .env.example .env
 ```
